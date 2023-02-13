@@ -77,6 +77,7 @@ end
 
 --- Gets a single instance from the pool
 ---@generic T
+---@param handle number
 ---@return T
 function Pool:Get(handle)
   if not handle then
