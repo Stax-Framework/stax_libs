@@ -1,3 +1,4 @@
+---@class UISingleton
 local UI = {}
 
 --- Enables the UI
