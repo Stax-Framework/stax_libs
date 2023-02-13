@@ -13,8 +13,9 @@ function UI.HideUI()
   UI.SendMessage({ mutation = "Router/HIDE_UI" })
 end
 
---- Changes the UI Route
+--- Changes the page the UI is rendering
 --- Works only if you are using the UI Vue template
+---@param route string
 function UI.ChangeRoute(route)
   UI.SendMessage({{ mutation = "Router/CHANGE_ROUTE", payload = { route = route } }})
 end
@@ -29,6 +30,7 @@ end
 
 --- Sends an NUI Message
 --- Works only if you are using the UI Vue template
+---@param data table
 function UI.SendMessage(data)
   SendNUIMessage(data)
 end
