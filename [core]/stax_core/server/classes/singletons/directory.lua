@@ -1,4 +1,4 @@
----@class Directory
+---@class DirectorySingleton
 local Directory = {}
 
 --- Scans directory for files - [SERVER]

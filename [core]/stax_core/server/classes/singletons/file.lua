@@ -1,4 +1,4 @@
----@class File
+---@class FileSingleton
 local File = {}
 
 --- Loads file from a directory
