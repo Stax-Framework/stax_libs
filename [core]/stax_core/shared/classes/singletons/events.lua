@@ -1,3 +1,4 @@
+---@class EventsSingleton
 local Events = {}
 
 --- Creates a local event handler
@@ -57,6 +58,6 @@ function Events.FireServer(event, ...)
   TriggerServerEvent(event, ...)
 end
 
-if not Stax.Singletons.Events then
-  Stax.Singletons.Events = Events
+function Stax.Events()
+  return Events
 end

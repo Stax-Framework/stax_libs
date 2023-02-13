@@ -180,3 +180,7 @@ end
 if not Stax.Classes.DateTime then
   Stax.Classes.DateTime = DateTime
 end
+
+function Stax.DateTime()
+  return DateTime
+end

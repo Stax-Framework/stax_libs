@@ -15,6 +15,6 @@ if not Stax.Classes.Game then
   Stax.Classes.Game = {}
 end
 
-if not Stax.Classes.Game.Pickup then
-  Stax.Classes.Game.Pickup = Pickup
+function Stax.Pickup()
+  return Pickup
 end

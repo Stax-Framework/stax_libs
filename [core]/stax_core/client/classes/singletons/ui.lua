@@ -50,7 +50,7 @@ function UI.RegisterCallback(type, callback)
 end
 
 Stax.ClientOnly(function()
-  if not Stax.Singletons.UI then
-    Stax.Singletons.UI = UI
+  function Stax.UI()
+    return UI
   end
 end)

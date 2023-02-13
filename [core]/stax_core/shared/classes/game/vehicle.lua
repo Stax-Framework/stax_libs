@@ -1,3 +1,37 @@
+---@enum VehicleSeat
+local VehicleSeat = {
+  none = -3,
+  any = -2,
+  left_front = -1,
+  right_front = 0,
+  left_rear = 1,
+  right_rear = 2,
+  extra_1 = 3,
+  extra_2 = 4,
+  extra_3 = 5,
+  extra_4 = 6,
+  extra_5 = 7,
+  extra_6 = 8,
+  extra_7 = 9,
+  extra_8 = 10,
+  extra_9 = 11,
+  extra_10 = 12,
+  extra_11 = 13,
+  extra_12 = 14
+}
+
+---@enum VehicleType
+local VehicleType = {
+  automobile = "automobile",
+  bike = "bike",
+  boat = "boat",
+  heli = "heli",
+  plane = "plane",
+  submarine = "submarine",
+  trailer = "trailer",
+  train = "train"
+}
+
 ---@class Vehicle
 ---@field public IsServer boolean Whether or not the class instance is on the client or server
 ---@field public Handle number Entity Id
@@ -93,6 +127,14 @@ function Vehicle:SetPosition(position, options)
   SetEntityCoords(self.Handle, position.x, position.y, position.z, false, false, false, clearArea)
 end
 
-if not Stax.Classes.Game.Vehicle then
-  Stax.Classes.Game.Vehicle = Vehicle
+function Stax.Vehicle()
+  return Vehicle
+end
+
+function Stax.VehicleSeat()
+  return VehicleSeat
+end
+
+function Stax.VehicleType()
+  return VehicleType
 end

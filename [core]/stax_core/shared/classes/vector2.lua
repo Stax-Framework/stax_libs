@@ -12,6 +12,6 @@ function Vector2.New(vector)
   return newVector2
 end
 
-if not Stax.Classes.Vector2 then
-  Stax.Classes.Vector2 = Vector2
+function Stax.Vector2()
+  return Vector2
 end

@@ -89,7 +89,7 @@ function Pool:GetAll()
 end
 
 Stax.ClientOnly(function()
-  if not Stax.Classes.Pool then
-    Stax.Classes.Pool = Pool
+  function Stax.Pool()
+    return Pool
   end
 end)

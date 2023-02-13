@@ -16,6 +16,6 @@ if not Stax.Classes.Game then
   Stax.Classes.Game = {}
 end
 
-if not Stax.Classes.Game.Ped then
-  Stax.Classes.Game.Ped = Ped
+function Stax.Ped()
+  return Ped
 end

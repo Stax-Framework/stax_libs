@@ -1,4 +1,9 @@
-local ThreadState = Stax.Enums.ThreadState
+---@enum ThreadState
+local ThreadState = {
+  Running = 0,
+  Paused = 1,
+  Destroyed = 2
+}
 
 ---@class Thread
 ---@field state ThreadState
@@ -14,7 +19,7 @@ function Thread.New(handler, time)
   local thread = {}
   setmetatable(thread, Thread)
 
-  thread.state = Thread.Paused
+  thread.state = ThreadState.Paused
   thread.time = time
 
   if type(handler) ~= "function" then return nil end
@@ -79,6 +84,10 @@ function Thread:SetTime(time)
   self.time = time
 end
 
-if not Stax.Classes.Thread then
-  Stax.Classes.Thread = Thread
+function Stax.Thread()
+  return Thread
+end
+
+function Stax.ThreadState()
+  return ThreadState
 end

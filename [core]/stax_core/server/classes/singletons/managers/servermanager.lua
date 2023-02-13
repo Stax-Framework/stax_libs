@@ -1,5 +1,3 @@
-local Exports = Stax.Singletons.Exports
-
 ---@class ServerManagerSingleton
 local ServerManager = {}
 
@@ -24,7 +22,7 @@ function ServerManager:IsServerReady()
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Singletons.ServerManager then
-    Stax.Singletons.ServerManager = ServerManager
+  function Stax.ServerManager()
+    return ServerManager
   end
 end)

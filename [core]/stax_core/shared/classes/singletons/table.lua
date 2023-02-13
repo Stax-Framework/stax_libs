@@ -1,3 +1,4 @@
+---@class TableSingleton
 local Table = {}
 
 --- Copy's a table into a new table
@@ -13,6 +14,6 @@ function Table.Copy(t)
   return newTable
 end
 
-if not Stax.Singletons.Table then
-  Stax.Singletons.Table = Table
+function Stax.Table()
+  return Table
 end

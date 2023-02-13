@@ -4,6 +4,7 @@ local characterSets = {
   "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"
 }
 
+---@class StringSingleton
 local String = {}
 
 --- Interpolates and concatenate's data into a string
@@ -62,6 +63,6 @@ function String.StripInvalid(str)
   return str
 end
 
-if not Stax.Singletons.String then
-  Stax.Singletons.String = String
+function Stax.String()
+  return String
 end

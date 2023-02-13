@@ -96,6 +96,6 @@ function NetworkCallback:CreateCallback(name --[[ string ]], callback --[[ funct
   end)
 end
 
-if not Stax.Classes.NetworkCallback then
-  Stax.Classes.NetworkCallback = NetworkCallback
+function Stax.NetworkCallback()
+  return NetworkCallback
 end

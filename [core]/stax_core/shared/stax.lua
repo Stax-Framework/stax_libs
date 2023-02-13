@@ -1,6 +1,3 @@
-local Config = Stax.Classes.Config
-local Locale = Stax.Classes.Locale
-
 ---@class Stax
 ---@field Singletons {}
 ---@field Classes {}
@@ -8,15 +5,15 @@ local Locale = Stax.Classes.Locale
 ---@field Config Config | nil
 ---@field Locale Locale | nil
 Stax = {
-  Singletons = {},
-  Classes = {}  ,
-  Enums = {},
   Config = nil,
   Locale = nil
 }
 
 --- Initializes Stax globally into your plugin
 function Stax.Init()
+  local Config = Stax.Config()
+  local Locale = Stax.Locale()
+
   Config.Listen(function(config)
     Stax.Config = config
   end)

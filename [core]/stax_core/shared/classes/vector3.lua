@@ -1,5 +1,5 @@
 ---@class Vector3
-Vector3 = {}
+local Vector3 = {}
 Vector3.__index = Vector3
 
 --- Creates a new instance of StaxVector2
@@ -12,6 +12,6 @@ function Vector3.New(vector)
   return Vector3
 end
 
-if not Stax.Classes.Vector3 then
-  Stax.Classes.Vector3 = Vector3
+function Stax.Vector3()
+  return Vector3
 end

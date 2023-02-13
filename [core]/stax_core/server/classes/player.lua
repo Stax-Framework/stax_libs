@@ -1,7 +1,7 @@
-local Events = Stax.Singletons.Events
-local String = Stax.Singletons.String
-local Table = Stax.Singletons.Table
-local User = Stax.Classes.User
+local Events = Stax.Events()
+local String = Stax.String()
+local Table = Stax.Table()
+local User = Stax.User()
 
 ---@class Player
 ---@field public Handle number Players server id
@@ -156,7 +156,7 @@ function Player:FireEvent(event, ...)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Classes.Player then
-    Stax.Classes.Player = Player
+  function Stax.Player()
+    return Player
   end
 end)

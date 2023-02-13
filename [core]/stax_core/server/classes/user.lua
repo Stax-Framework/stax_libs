@@ -1,6 +1,6 @@
-local Database = Stax.Singletons.DatabaseUser
-local Logger = Stax.Singletons.Logger
-local DateTime = Stax.Classes.DateTime
+local Database = Stax.Database()
+local Logger = Stax.Logger()
+local DateTime = Stax.DateTime()
 
 ---@class User
 ---@field public Id number User's Id
@@ -315,7 +315,7 @@ function User:CreateWarn(reason, admin)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Classes.User then
-    Stax.Classes.User = User
+  function Stax.User()
+    return User
   end
 end)

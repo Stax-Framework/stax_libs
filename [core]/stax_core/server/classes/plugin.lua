@@ -1,11 +1,11 @@
-local Logger = Stax.Singletons.Logger
-local Events = Stax.Singletons.Events
-local Directory = Stax.Singletons.Directory
-local Config = Stax.Classes.Config
-local Locale = Stax.Classes.Locale
-local PluginManager = Stax.Singletons.PluginManager
-local Database = Stax.Singletons.Database
-local Class = Stax.Singletons.Class
+local Logger = Stax.Logger()
+local Events = Stax.Events()
+local Directory = Stax.Directory()
+local Config = Stax.Config()
+local Locale = Stax.Locale()
+local PluginManager = Stax.PluginManager()
+local Database = Stax.Database()
+local Class = Stax.Class()
 
 ---@class Plugin
 ---@field public ResourceName string Plugin resource folder name
@@ -326,7 +326,7 @@ function Plugin:GetFirstByKey(key)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Classes.Plugin then
-    Stax.Classes.Plugin = Plugin
+  function Stax.Plugin()
+    return Plugin
   end
 end)

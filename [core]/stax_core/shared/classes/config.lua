@@ -1,7 +1,7 @@
-local String = Stax.Singletons.String
-local Table = Stax.Singletons.Table
-local Class = Stax.Singletons.Class
-local Events = Stax.Singletons.Events
+local String = Stax.String()
+local Table = Stax.Table()
+local Class = Stax.Class()
+local Events = Stax.Events()
 
 ---@class Config
 ---@field private Storage table
@@ -81,4 +81,8 @@ end
 
 if not Stax.Classes.Config then
   Stax.Classes.Config = Config
+end
+
+function Stax.Config()
+  return Config
 end

@@ -19,7 +19,7 @@ function PlayerManager:GetPlayerData(source, key)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Singletons.PlayerManager then
-    Stax.Singletons.PlayerManager = PlayerManager
+  function Stax.PlayerManager()
+    return PlayerManager
   end
 end)

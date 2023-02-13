@@ -31,7 +31,8 @@ function Database.AsyncQuery(query, data)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Classes.Database then
-    Stax.Singletons.Database = Database
+  --- Server Only
+  function Stax.Database()
+    return Database
   end
 end)

@@ -1,5 +1,3 @@
-local Exports = Stax.Singletons.Exports
-
 ---@class PluginManagerSingleton
 local PluginManager = {}
 
@@ -18,7 +16,7 @@ function PluginManager.GetPluginKey(resource)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Singletons.PluginManager then
-    Stax.Singletons.PluginManager = PluginManager
+  function Stax.PluginManager()
+    return PluginManager
   end
 end)

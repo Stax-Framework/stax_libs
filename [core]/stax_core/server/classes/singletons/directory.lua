@@ -16,7 +16,7 @@ function Directory.Scan(directory)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Singletons.Directory then
-    Stax.Singletons.Directory = Directory
+  function Stax.Directory()
+    return Directory
   end
 end)

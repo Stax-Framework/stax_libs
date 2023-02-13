@@ -16,6 +16,6 @@ if not Stax.Classes.Game then
   Stax.Classes.Game = {}
 end
 
-if not Stax.Classes.Game.Object then
-  Stax.Classes.Game.Object = Object
+function Stax.Object()
+  return Object
 end

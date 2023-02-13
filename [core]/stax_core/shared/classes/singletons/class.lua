@@ -1,3 +1,4 @@
+---@class ClassSingleton
 local Class = {}
 
 --- Reinitializes class from its data
@@ -9,6 +10,6 @@ function Class.Init(data, class)
   return setmetatable(data, class)
 end
 
-if not Stax.Singletons.Class then
-  Stax.Singletons.Class = Class
+function Stax.Class()
+  return Class
 end

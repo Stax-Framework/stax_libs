@@ -1,5 +1,6 @@
 local String = Stax.Singletons.String
 
+---@class LoggerSingleton
 local Logger = {}
 
 ---@param action string
@@ -37,4 +38,8 @@ end
 
 if not Stax.Singletons.Logger then
   Stax.Singletons.Logger = Logger
+end
+
+function Stax.Logger()
+  return Logger
 end

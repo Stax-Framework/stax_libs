@@ -1,7 +1,7 @@
-local String = Stax.Singletons.String
-local Table = Stax.Singletons.Table
-local Class = Stax.Singletons.Class
-local Events = Stax.Singletons.Events
+local String = Stax.String()
+local Table = Stax.Table()
+local Class = Stax.Class()
+local Events = Stax.Events()
 
 ---@class Locale
 ---@field private Storage table
@@ -55,6 +55,6 @@ function Locale.Listen(callback)
   end
 end
 
-if not Stax.Classes.Locale then
-  Stax.Classes.Locale = Locale
+function Stax.Locale()
+  return Locale
 end

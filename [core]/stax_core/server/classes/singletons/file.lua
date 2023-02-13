@@ -18,7 +18,7 @@ function File.LoadFile(directory, file)
 end
 
 Stax.ServerOnly(function()
-  if not Stax.Singletons.File then
-    Stax.Singletons.File = File
+  function Stax.File()
+    return File
   end
 end)
