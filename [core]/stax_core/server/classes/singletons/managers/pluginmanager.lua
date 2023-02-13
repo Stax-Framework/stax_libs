@@ -1,6 +1,6 @@
 local Exports = Stax.Singletons.Exports
 
----@class PluginManager
+---@class PluginManagerSingleton
 local PluginManager = {}
 
 --- Gets the plugin using its key

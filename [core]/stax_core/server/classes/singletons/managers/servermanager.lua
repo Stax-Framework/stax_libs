@@ -1,6 +1,6 @@
 local Exports = Stax.Singletons.Exports
 
----@class ServerManager
+---@class ServerManagerSingleton
 local ServerManager = {}
 
 --- Sets a ready state on the server manager

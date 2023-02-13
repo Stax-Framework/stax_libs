@@ -1,4 +1,4 @@
----@class PlayerManager
+---@class PlayerManagerSingleton
 local PlayerManager = {}
 
 --- Gets the player from the player manager
