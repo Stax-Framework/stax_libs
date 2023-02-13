@@ -16,6 +16,7 @@ function Directory.Scan(directory)
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.Directory()
     return Directory
   end

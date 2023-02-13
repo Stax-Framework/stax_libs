@@ -19,6 +19,7 @@ function PlayerManager:GetPlayerData(source, key)
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.PlayerManager()
     return PlayerManager
   end

@@ -326,6 +326,7 @@ function Plugin:GetFirstByKey(key)
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.Plugin()
     return Plugin
   end

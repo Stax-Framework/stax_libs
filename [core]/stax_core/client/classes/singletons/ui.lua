@@ -50,6 +50,7 @@ function UI.RegisterCallback(type, callback)
 end
 
 Stax.ClientOnly(function()
+  --- [CLIENT]
   function Stax.UI()
     return UI
   end

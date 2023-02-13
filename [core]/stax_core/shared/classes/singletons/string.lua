@@ -63,6 +63,7 @@ function String.StripInvalid(str)
   return str
 end
 
+--- [ SHARED ]
 function Stax.String()
   return String
 end

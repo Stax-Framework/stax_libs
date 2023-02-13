@@ -12,10 +12,7 @@ function Ped.Init(handle)
   return newPed
 end
 
-if not Stax.Classes.Game then
-  Stax.Classes.Game = {}
-end
-
+--- [ SHARED ]
 function Stax.Ped()
   return Ped
 end

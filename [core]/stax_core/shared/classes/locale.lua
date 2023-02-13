@@ -13,7 +13,7 @@ Locale.__index = Locale
 ---@return Locale
 function Locale.New(locale)
   local newLocale = {}
-  setmetatable(newLocale, Stax.Classes.Locale)
+  setmetatable(newLocale, Locale)
 
   newLocale.Storage = locale
 

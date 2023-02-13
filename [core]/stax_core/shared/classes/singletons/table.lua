@@ -14,6 +14,7 @@ function Table.Copy(t)
   return newTable
 end
 
+--- [ SHARED ]
 function Stax.Table()
   return Table
 end

@@ -12,10 +12,7 @@ function Object.Init(handle)
   return newObject
 end
 
-if not Stax.Classes.Game then
-  Stax.Classes.Game = {}
-end
-
+--- [ SHARED ]
 function Stax.Object()
   return Object
 end

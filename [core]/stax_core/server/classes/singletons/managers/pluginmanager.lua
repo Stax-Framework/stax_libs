@@ -16,7 +16,10 @@ function PluginManager.GetPluginKey(resource)
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.PluginManager()
     return PluginManager
   end
 end)
+
+Stax.PluginManager()

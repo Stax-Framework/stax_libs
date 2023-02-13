@@ -31,7 +31,7 @@ function Database.AsyncQuery(query, data)
 end
 
 Stax.ServerOnly(function()
-  --- Server Only
+  --- [ SERVER ]
   function Stax.Database()
     return Database
   end

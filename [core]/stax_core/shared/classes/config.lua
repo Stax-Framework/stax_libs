@@ -16,7 +16,7 @@ Config.__index = Config
 ---@return Config
 function Config.Load(cfg)
   local config = {}
-  setmetatable(config, Stax.Classes.Config)
+  setmetatable(config, Config)
 
   config.Storage = cfg
 
@@ -69,20 +69,17 @@ function Config.Listen(callback)
   if isServer then
     Events.CreateEvent("STAX::Core::Shared::ConfigListener", function(resource, config)
       if currentResource ~= resource then return end
-      callback(Class.Init(config, Stax.Classes.Config))
+      callback(Class.Init(config, Config))
     end)
   else
     Events.CreateNetEvent("STAX::Core::Shared::ConfigListener", function(resource, config)
       if currentResource ~= resource then return end
-      callback(Class.Init(config, Stax.Classes.Config))
+      callback(Class.Init(config, Config))
     end)
   end
 end
 
-if not Stax.Classes.Config then
-  Stax.Classes.Config = Config
-end
-
+--- [ SHARED ]
 function Stax.Config()
   return Config
 end

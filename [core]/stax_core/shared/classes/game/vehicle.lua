@@ -127,14 +127,17 @@ function Vehicle:SetPosition(position, options)
   SetEntityCoords(self.Handle, position.x, position.y, position.z, false, false, false, clearArea)
 end
 
+--- [ SHARED ]
 function Stax.Vehicle()
   return Vehicle
 end
 
+--- [ SHARED ]
 function Stax.VehicleSeat()
   return VehicleSeat
 end
 
+--- [ SHARED ]
 function Stax.VehicleType()
   return VehicleType
 end

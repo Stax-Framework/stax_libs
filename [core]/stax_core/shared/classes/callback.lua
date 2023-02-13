@@ -96,6 +96,7 @@ function NetworkCallback:CreateCallback(name --[[ string ]], callback --[[ funct
   end)
 end
 
+--- [ SHARED ]
 function Stax.NetworkCallback()
   return NetworkCallback
 end

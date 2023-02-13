@@ -1,3 +1,8 @@
+local Vehicle = Stax.Vehicle()
+local Ped = Stax.Ped()
+local Object = Stax.Object()
+local Pickup = Stax.Pickup()
+
 ---@class Pool
 ---@field private Pool any
 local Pool = {}
@@ -13,7 +18,7 @@ function Pool.Vehicle()
   local data = GetGamePool("CVehicle")
 
   for _, v in pairs(data) do
-    newPool[v] = Stax.Classes.Game.Vehicle.Init(v)
+    newPool[v] = Vehicle.Init(v)
   end
 
   return newPool
@@ -30,7 +35,7 @@ function Pool.Ped()
   local data = GetGamePool("CPed")
 
   for _, v in pairs(data) do
-    newPool[v] = Stax.Classes.Game.Ped.Init(v)
+    newPool[v] = Ped.Init(v)
   end
 
   return newPool
@@ -47,7 +52,7 @@ function Pool.Pickup()
   local data = GetGamePool("CPickup")
 
   for _, v in pairs(data) do
-    newPool[v] = Stax.Classes.Game.Pickup.Init(v)
+    newPool[v] = Pickup.Init(v)
   end
 
   return newPool
@@ -64,7 +69,7 @@ function Pool.Object()
   local data = GetGamePool("CObject")
 
   for _, v in pairs(data) do
-    newPool[v] = Stax.Classes.Game.Object.Init(v)
+    newPool[v] = Object.Init(v)
   end
 
   return newPool
@@ -89,6 +94,7 @@ function Pool:GetAll()
 end
 
 Stax.ClientOnly(function()
+  --- [CLIENT]
   function Stax.Pool()
     return Pool
   end

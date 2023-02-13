@@ -10,6 +10,7 @@ function Class.Init(data, class)
   return setmetatable(data, class)
 end
 
+--- [ SHARED ]
 function Stax.Class()
   return Class
 end

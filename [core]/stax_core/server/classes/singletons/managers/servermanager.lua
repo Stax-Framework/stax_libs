@@ -22,6 +22,7 @@ function ServerManager:IsServerReady()
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.ServerManager()
     return ServerManager
   end

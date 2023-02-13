@@ -12,6 +12,7 @@ function Vector3.New(vector)
   return Vector3
 end
 
+--- [ SHARED ]
 function Stax.Vector3()
   return Vector3
 end

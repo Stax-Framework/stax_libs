@@ -1,4 +1,4 @@
-local String = Stax.Singletons.String
+local String = Stax.String()
 
 ---@class LoggerSingleton
 local Logger = {}
@@ -36,10 +36,7 @@ function Logger.Warning(action, message)
   print(msg)
 end
 
-if not Stax.Singletons.Logger then
-  Stax.Singletons.Logger = Logger
-end
-
+--- [ SHARED ]
 function Stax.Logger()
   return Logger
 end

@@ -58,6 +58,7 @@ function Events.FireServer(event, ...)
   TriggerServerEvent(event, ...)
 end
 
+--- [ SHARED ]
 function Stax.Events()
   return Events
 end

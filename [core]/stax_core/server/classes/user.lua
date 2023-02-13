@@ -315,6 +315,7 @@ function User:CreateWarn(reason, admin)
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.User()
     return User
   end

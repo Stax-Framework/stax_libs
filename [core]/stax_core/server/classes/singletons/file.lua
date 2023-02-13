@@ -18,6 +18,7 @@ function File.LoadFile(directory, file)
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.File()
     return File
   end

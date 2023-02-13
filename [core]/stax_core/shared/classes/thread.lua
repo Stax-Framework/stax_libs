@@ -84,10 +84,12 @@ function Thread:SetTime(time)
   self.time = time
 end
 
+--- [ SHARED ]
 function Stax.Thread()
   return Thread
 end
 
+--- [ SHARED ]
 function Stax.ThreadState()
   return ThreadState
 end

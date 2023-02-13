@@ -156,6 +156,7 @@ function Player:FireEvent(event, ...)
 end
 
 Stax.ServerOnly(function()
+  --- [ SERVER ]
   function Stax.Player()
     return Player
   end
