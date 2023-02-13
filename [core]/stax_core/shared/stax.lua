@@ -1,7 +1,4 @@
 ---@class Stax
----@field Singletons {}
----@field Classes {}
----@field Enums {}
 ---@field Config Config | nil
 ---@field Locale Locale | nil
 Stax = {
