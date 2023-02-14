@@ -2,7 +2,7 @@
 local Object = {}
 Object.__index = Object
 
----
+--- Creates a new instance of Object
 function Object.Init(handle)
   local newObject = {}
   setmetatable(newObject, Object)

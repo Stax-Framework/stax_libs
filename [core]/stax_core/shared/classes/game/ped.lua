@@ -2,6 +2,7 @@
 local Ped = {}
 Ped.__index = Ped
 
+--- Creates a new instance of Ped
 function Ped.Init(handle)
   local newPed = {}
   setmetatable(newPed, Ped)
