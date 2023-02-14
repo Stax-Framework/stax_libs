@@ -21,5 +21,3 @@ Stax.ServerOnly(function()
     return PluginManager
   end
 end)
-
-Stax.PluginManager()
