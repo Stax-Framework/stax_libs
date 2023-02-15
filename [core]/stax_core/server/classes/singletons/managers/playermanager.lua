@@ -1,21 +1,23 @@
 ---@class PlayerManagerSingleton
 local PlayerManager = {}
 
+--- Adds player to the manager
+---@param player Player
+function PlayerManager.Add(player)
+  exports.stax_core:PlayerManager_Add(player)
+end
+
+--- Removes player from the manager
+---@param player Player
+function PlayerManager.Remove(player)
+  exports.stax_core:PlayerManager_Remove(player)
+end
+
 --- Gets the player from the player manager
 ---@param source number
 ---@return Player | nil
-function PlayerManager.GetPlayer(source)
-  return exports.stax_core:PlayerManager_GetPlayer(source)
-end
-
---- Sets some data on the player instance
-function PlayerManager.SetPlayerData(source, key, data)
-  exports.stax_core:PlayerManager_SetPlayerData(source, key, data)
-end
-
---- Gets some data from the player instance
-function PlayerManager:GetPlayerData(source, key)
-  return exports.stax_core:PlayerManager_GetPlayerData(source, key)
+function PlayerManager.Get(source)
+  return exports.stax_core:PlayerManager_Get(source)
 end
 
 Stax.ServerOnly(function()
