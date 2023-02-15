@@ -8,7 +8,6 @@ local User = Stax.User()
 ---@field public Name string Players server name
 ---@field public Identifiers table<number, string> Table of players available identifiers
 ---@field public User User User instance for this player
----@field public Data table<string, any>
 local Player = {}
 Player.__index = Player
 
@@ -26,16 +25,8 @@ function Player.New(handle)
   newPlayer.Name = validatedName
   newPlayer.Identifiers = newPlayer:GetIdentifiers()
   newPlayer.User = nil
-  newPlayer.Data = {}
 
   return newPlayer
-end
-
---- Reinitialized instance of Player
----@param player Player
----@return Player
-function Player.Class(player)
-  return setmetatable(player, Player)
 end
 
 --- Loads the user into the player instance
@@ -53,53 +44,6 @@ function Player:LoadUser()
   end
 
   return false
-end
-
---- Stores some data inside of the Player instance
----@param keys string
----@param newData any
-function Player:SetData(keys, newData)
-  if not keys then return end
-
-  local path = String.Split(keys, ".")
-  local data = Table.Copy(self.Data)
-
-  for index, v in pairs(path) do
-    -- if index == #path then
-    --   data[v] = newData
-    --   return true
-    -- end
-    -- data = data[v]
-    if data[v] then
-      if index == #path then
-        data[v] = newData
-        break
-      end
-      data = data[v]
-    else
-      data[v] = {}
-    end
-  end
-
-  exports.stax_core:PlayerManager_SetPlayerData(self, self.Data)
-end
-
---- Gets some data stored inside of the Player instance
----@param keys string
----@return any
-function Player:GetData(keys)
-  if not keys then
-    return self.Data
-  end
-
-  local path = String.Split(keys, ".")
-  local data = Table.Copy(self.Data)
-
-  for _, v in pairs(path) do
-    data = data[v]
-  end
-
-  return data
 end
 
 ---@return table<number, string>
