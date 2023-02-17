@@ -1,9 +1,15 @@
 ---@class Stax
 ---@field Config Config | nil
 ---@field Locale Locale | nil
+---@field Roleplay table
+---@field DeadZone table 
+---@field FirstResponse table
 Stax = {
   Config = nil,
-  Locale = nil
+  Locale = nil,
+  Roleplay = {},
+  DeadZone = {},
+  FirstResponse = {}
 }
 
 --- Initializes Stax globally into your plugin

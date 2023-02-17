@@ -2,13 +2,13 @@
 local JobsManager = {}
 
 --- Adds a job into the jobs manager
----@param job Job
+---@param job RPJob
 function JobsManager.AddJob(job)
   exports.stax_roleplay:JobsManager_AddJob(job)
 end
 
 --- Removes job from the jobs manager
----@param job Job
+---@param job RPJob
 function JobsManager.RemoveJob(job)
   exports.stax_roleplay:JobsManager_RemoveJob(job)
 end
