@@ -244,7 +244,7 @@ end
 function Plugin:LoadLocale()
   local p = promise.new()
 
-  local corePlugin = PluginManager.GetPlugin("stax-core")
+  local corePlugin = PluginManager.Get("stax-core")
 
   if not corePlugin then
     Logger.Error("Couldn't get core plugin", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
