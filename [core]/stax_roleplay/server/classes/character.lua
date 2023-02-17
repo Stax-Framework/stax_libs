@@ -6,14 +6,14 @@
 ---@field public Gender string
 ---@field public Model string
 ---@field public UserId string
-local RPCharacter = {}
-RPCharacter.__index = RPCharacter
+local Character = {}
+Character.__index = Character
 
 --- Creates a new instance of StaxCharacter
 ---@param player Player
 ---@param characterId number
 ---@return RPCharacter
-function RPCharacter.New(player, characterId)
+function Character.New(player, characterId)
   local newCharacter = {}
 
   newCharacter.Id = nil
@@ -27,12 +27,12 @@ function RPCharacter.New(player, characterId)
   return newCharacter
 end
 
-function RPCharacter:Load()
+function Character:Load()
 
 end
 
 Stax.ServerOnly(function()
   function Stax.Roleplay.Character()
-    return RPCharacter
+    return Character
   end
 end)
