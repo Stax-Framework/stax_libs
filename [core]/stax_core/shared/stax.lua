@@ -53,5 +53,3 @@ function Stax.RunGameOnly(game, callback)
     return callback()
   end
 end
-
-Stax.Init()
