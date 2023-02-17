@@ -119,3 +119,17 @@ function JobRole:Compare(role)
 
   return "=="
 end
+
+Stax.ServerOnly(function()
+  function Stax.Roleplay.Job()
+    return Job
+  end
+
+  function Stax.Roleplay.JobEmployee()
+    return JobEmployee
+  end
+
+  function Stax.Roleplay.JobRole()
+    return JobRole
+  end
+end)
