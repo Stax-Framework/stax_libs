@@ -15,6 +15,7 @@ end
 
 --- Gets a job from the jobs manager
 ---@param key string
+---@return RPJob
 function JobsManager.GetJob(key)
   return exports.stax_roleplay:JobsManager_GetJob(key)
 end
