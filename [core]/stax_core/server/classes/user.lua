@@ -45,12 +45,12 @@ function User.Create(player)
   })
 
   if not insertedUser then
-    Logger.Error("Couldn't create user account", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Create::FailedCreateUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 
   if not insertedUser.Ok then
-    Logger.Error("Couldn't create user account", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Create::FailedCreateUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 
@@ -63,12 +63,12 @@ function User.Create(player)
   end
 
   if not user.Ok then
-    Logger.Error("Couldn't load newly created user account", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Create::FailedLoadNewUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 
   if #user.Results < 1 then
-    Logger.Error("Couldn't load newly created user account", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Create::FailedLoadNewUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 
@@ -106,17 +106,17 @@ function User.Load(player)
   end
 
   if not user.Ok then
-    Logger.Error("Couldn't load newly created user account", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Load::FailedLoadNewUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 
   if not user.Ok then
-    Logger.Error("Couldn't load user account", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Load::FailedLoadUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 
   if #user.Results < 1 then
-    Logger.Error("Couldn't load newly created user account", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Load::FailedLoadNewUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 
@@ -134,7 +134,7 @@ function User.Load(player)
   newUser.Warns = newUser:LoadWarns()
 
   if not newUser.Bans or not newUser.Kicks or not newUser.Warns then
-    Logger.Error("Couldn't load user", "[PLAYER]: [" .. player.Name .. "]")
+    Logger.Error("User::Load::FailedLoadUser", "[PLAYER]: [" .. player.Name .. "]")
     return nil
   end
 

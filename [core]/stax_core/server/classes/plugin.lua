@@ -124,7 +124,7 @@ end
 function Plugin:Migrate()
   local p = promise.new()
 
-  Logger.Success("Starting Migrations", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+  Logger.Success("Plugin::Migrate::StartingMigrations", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
 
   local pluginDirectory = GetResourcePath(self.ResourceName) .. "/sql/"
 
@@ -135,14 +135,14 @@ function Plugin:Migrate()
   end
 
   if #files < 1 then
-    Logger.Warning("Didn't find any sql files", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+    Logger.Warning("Plugin::Migrate::NoSQLFiles", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
     return false
   end
 
   for a = 1, #files do
     local sql = LoadResourceFile(self.ResourceName, "/sql/" .. files[a])
     
-    Logger.Success("Executing Query", "[(" .. self.ResourceName .. ") " .. self.Name .. "] :: " .. files[a])
+    Logger.Success("Plugin::Migrate::ExecutingQuery", "[(" .. self.ResourceName .. ") " .. self.Name .. "] :: " .. files[a])
 
     local results = Database.AsyncQuery(sql)
 
@@ -152,10 +152,10 @@ function Plugin:Migrate()
       end
     end
 
-    Logger.Success("Executed Query", "[(" .. self.ResourceName .. ") " .. self.Name .. "] :: " .. files[a])
+    Logger.Success("Plugin::Migrate::ExecutedQuery", "[(" .. self.ResourceName .. ") " .. self.Name .. "] :: " .. files[a])
   end
 
-  Logger.Success("Migration Complete", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+  Logger.Success("Plugin::Migrate::MigrationComplete", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
 
   p:resolve()
 
@@ -172,12 +172,12 @@ function Plugin:LoadConfig()
   local files = Directory.Scan(pluginDirectory)
 
   if not files then
-    Logger.Warning("Couldn't load any of your config files", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+    Logger.Warning("Plugin::LoadConfig::ConfigLoadFailed", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
     return nil
   end
 
   if #files < 1 then
-    Logger.Warning("Didn't find any config files", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+    Logger.Warning("Plugin::LoadConfig::NoConfigFiles", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
     return nil
   end
 
@@ -220,7 +220,7 @@ function Plugin:LoadConfig()
   self.Config.Client = config.client
   self.Config.Shared = config.shared
 
-  Logger.Success("Loaded Config", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+  Logger.Success("Plugin::LoadConfig::LoadedConfig", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
 
   p:resolve()
 
@@ -247,7 +247,7 @@ function Plugin:LoadLocale()
   local corePlugin = PluginManager.Get("stax-core")
 
   if not corePlugin then
-    Logger.Error("Couldn't get core plugin", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+    Logger.Error("Plugin::LoadLocale::FailedGetCorePlugin", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
     return
   end
 
@@ -256,14 +256,14 @@ function Plugin:LoadLocale()
   local lang = coreConfig:Get("framework.locale")
 
   if not lang then
-    Logger.Error("Couldn't get language from core config", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+    Logger.Error("Plugin::LoadLocale::FailedGetLangFromCore", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
     return
   end
 
   local locale = LoadResourceFile(self.ResourceName, "/locales/" .. lang .. ".json")
 
   if not locale then
-    Logger.Warning("Couldn't get locale file", "[(" .. self.ResourceName .. ") " .. self.Name .. "] :: [LANGUAGE]: " .. lang)
+    Logger.Warning("Plugin::LoadLocale::NoLocaleFile", "[(" .. self.ResourceName .. ") " .. self.Name .. "] :: [LANGUAGE]: " .. lang)
     return
   end
 
@@ -271,7 +271,7 @@ function Plugin:LoadLocale()
 
   self.Locale = Locale.New(decodedLocale)
 
-  Logger.Success("Loaded Locale", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
+  Logger.Success("Plugin::LoadLocale::LoadedLocale", "[(" .. self.ResourceName .. ") " .. self.Name .. "]")
 
   p:resolve()
 
